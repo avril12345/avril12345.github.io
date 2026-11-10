@@ -108,7 +108,7 @@ export default function AboutPage() {
         <div className="min-w-0">
           <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent-strong">{about.eyebrow}</p>
           {/* Long headlines (a sentence or two) get a calmer size so they don't swamp the page. */}
-          <h1 className={`mt-4 text-balance font-semibold tracking-tight text-fg ${about.headline.length > 90 ? "text-2xl leading-snug md:text-[2rem]" : "text-3xl md:text-5xl"}`}>{about.headline}</h1>
+          <h1 className={`mt-4 text-balance font-semibold tracking-tight text-fg ${about.headline.length > 250 ? "text-xl leading-relaxed md:text-2xl md:leading-relaxed" : about.headline.length > 90 ? "text-2xl leading-snug md:text-[2rem]" : "text-3xl md:text-5xl"}`}>{about.headline}</h1>
           <p className="mt-6 max-w-2xl text-pretty text-lg text-muted">{about.intro}</p>
 
           <Markdown className="mt-8 max-w-2xl text-muted">{about.body}</Markdown>
