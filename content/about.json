@@ -19,12 +19,7 @@
       "body": "Geospatial pipelines, scoring models and visualisations that turn public data into shortlists and decisions."
     }
   ],
-  "skills": [
-    { "group": "Languages", "items": ["Python", "TypeScript", "JavaScript", "SQL"] },
-    { "group": "Apps", "items": ["Streamlit", "Flask", "Node.js", "Next.js", "React"] },
-    { "group": "Data", "items": ["Pandas", "GeoPandas", "SQLite", "Data visualisation"] },
-    { "group": "AI", "items": ["Claude API", "Structured outputs", "Prompt design", "Evaluation"] }
-  ],
+  "skills": [],
   "cta": "Want to talk about a project, or a role where I could build tools like these?",
   "personal": {
     "heading": "Outside work",
