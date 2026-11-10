@@ -10,7 +10,13 @@ Next.js 15 App Router + TS + Tailwind v4 + Framer Motion, `output: 'export'`. No
 2. ✅ Gallery + detail view (smoke-tested against `out/`: keys, wrap, drag, filter, nav, iframe, fallback, 404, mobile overflow)
 3. ✅ Tour boxes + edit mode (Playwright-tested in dev: drag, resize, inline edit, review, save, 409, preview, mobile sheet; prod export verified free of edit code/API/drafts)
 4. ✅ Design polish + performance (Lighthouse mobile 89–97 perf, 100 a11y/best/SEO; desktop 100)
-5. Deploy (repo `avril12345.github.io`, Actions → Pages on push to main)
+5. ✅ Deploy: live at https://avril12345.github.io (repo `avril12345/avril12345.github.io`, Pages source = GitHub Actions, `.github/workflows/deploy.yml` on push to main + weekly). Committee-dashboard Pages is on (legacy, main / root) and embeds fine.
+
+## Phase 5 notes
+- Publish button: `src/app/api/publish/route.dev.ts` (dev only) commits ONLY `content/`, `public/projects/`, `assets/projects/` then `git push`. GET relies on `Sec-Fetch-Site` (same-origin GETs send no Origin).
+- Repo-local git identity uses the GitHub no-reply email (keeps the Gmail out of public history). `.gitattributes` forces LF.
+- `previewUrl` (optional) = short card loop; cards never autoplay the full `videoUrl`.
+- Still needed from the user: videos for LOUD, Spruce, Reservoir, shelfshare (+ optional Committee); LOUD artifact must be shared "anyone with link"; screenshots for Spruce/Reservoir/LOUD; all 22 tour steps still draft.
 
 ## Content
 - `content/site.json`: name, intro, links (schema `SiteSchema`).
