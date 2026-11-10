@@ -37,7 +37,9 @@ export const ProjectSchema = z.object({
   repo: z.string().regex(/^[\w.-]+\/[\w.-]+$/),
   repoUrl: z.url(),
   liveUrl: z.url().nullable(),
-  /** True only when liveUrl can be shown in an iframe */
+  /** Iframe address when it differs from liveUrl (e.g. a Streamlit app's ?embed=true) */
+  embedUrl: z.url().nullable().default(null),
+  /** True only when the site can be shown in an iframe */
   embeddable: z.boolean(),
   /** MP4/WebM path under /public, or a YouTube/Loom URL */
   videoUrl: z.string().nullable(),

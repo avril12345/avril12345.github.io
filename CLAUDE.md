@@ -16,7 +16,9 @@ Next.js 15 App Router + TS + Tailwind v4 + Framer Motion, `output: 'export'`. No
 - Publish button: `src/app/api/publish/route.dev.ts` (dev only) commits ONLY `content/`, `public/projects/`, `assets/projects/` then `git push`. GET relies on `Sec-Fetch-Site` (same-origin GETs send no Origin).
 - Repo-local git identity uses the GitHub no-reply email (keeps the Gmail out of public history). `.gitattributes` forces LF.
 - `previewUrl` (optional) = short card loop; cards never autoplay the full `videoUrl`.
-- Still needed from the user: videos for LOUD, Spruce, Reservoir, shelfshare (+ optional Committee); LOUD artifact must be shared "anyone with link"; screenshots for Spruce/Reservoir/LOUD; all 22 tour steps still draft.
+- `embedUrl` (optional) = iframe src when it differs from liveUrl. Spruce + Reservoir are live Streamlit apps (`?embed=true`), verified rendering inside the frame. Free Streamlit apps sleep; the wake button shows inside the frame.
+- `npm run shots` uses embedUrl, wakes sleeping Streamlit apps, captures once (thumb = resized poster) and retakes blank captures (stdev check). Skips claude.ai URLs (private).
+- Still needed from the user: LOUD artifact shared "anyone with link" + LOUD screenshot; videos (fallbacks) esp. LOUD and shelfshare; all 22 tour steps still draft.
 
 ## Content
 - `content/site.json`: name, intro, links (schema `SiteSchema`).

@@ -26,7 +26,8 @@ const LOAD_TIMEOUT_MS = 15_000;
  */
 export function DemoViewer() {
   const { project, stepCount, startTour, tourIndex, setTourIndex } = useProjectCtx();
-  const canLive = project.embeddable && !!project.liveUrl;
+  const frameSrc = project.embedUrl ?? project.liveUrl;
+  const canLive = project.embeddable && !!frameSrc;
   const video = parseVideo(project.videoUrl);
   const [mode, setMode] = useState<Mode>(canLive ? "live" : "video");
   const [live, setLive] = useState<LiveStatus>("idle");
@@ -122,7 +123,7 @@ export function DemoViewer() {
         {/* Live iframe: mounted on first request, kept alive while switching modes */}
         {canLive && live !== "idle" && live !== "failed" && (
           <iframe
-            src={project.liveUrl!}
+            src={frameSrc!}
             title={`${project.title}, live demo`}
             loading="lazy"
             sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-downloads"

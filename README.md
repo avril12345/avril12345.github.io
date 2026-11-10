@@ -52,7 +52,8 @@ src/                         the site itself
    | `tags` | Tech stack. Tags shared by 2+ projects become filter chips |
    | `year`, `status` | `status` is `live`, `beta` or `archived` |
    | `repo`, `repoUrl` | `repo` is `owner/name`; it pulls last-updated and languages from GitHub at build time |
-   | `liveUrl`, `embeddable` | Set `embeddable: true` only if the site can be shown in an iframe (GitHub Pages sites can) |
+   | `liveUrl`, `embeddable` | Set `embeddable: true` only if the site can be shown in an iframe (GitHub Pages sites and Streamlit apps can) |
+   | `embedUrl` | Optional iframe address when it differs from `liveUrl`. For Streamlit apps, use `https://<app>.streamlit.app/?embed=true` |
    | `videoUrl` | `/videos/<slug>.mp4`, or a YouTube / Loom link |
    | `previewUrl` | Optional short muted loop for the gallery card |
    | `poster`, `thumbnail` | `/projects/<slug>/poster.webp` and `thumb.webp` |
@@ -127,8 +128,10 @@ Only static sites can run on GitHub Pages. Server apps (Python, Node) need anoth
 |---|---|---|
 | Committee-dashboard | ✅ | Settings → Pages → Deploy from a branch → `main` / `(root)` → Save. No build step or base path needed. Then set the repo's homepage to `https://avril12345.github.io/Committee-dashboard/`. |
 | PersonalBrandingAgency_Demo | ⚠️ `site/` only | Add `base: '/PersonalBrandingAgency_Demo/'` to `site/vite.config.ts`, then add a workflow that runs `npm ci && npm run build` in `site/` and uploads `site/dist`. Set Pages → Source: GitHub Actions. The CRM itself needs Node; the live demo is the claude.ai artifact instead. |
-| SpruceDemoV3 | ❌ Streamlit | Streamlit Community Cloud (see its README). It can be embedded with `?embed=true`, but free apps sleep. Set an Anthropic spend limit first. |
-| Reservoir | ❌ Streamlit + GeoPandas | Streamlit Cloud with committed outputs, or video only. |
+| SpruceDemoV3 | ❌ Streamlit | ✅ Live on Streamlit Community Cloud: https://sprucedemov3.streamlit.app, embedded via `?embed=true`. Keep an Anthropic spend limit set. |
+| Reservoir | ❌ Streamlit + GeoPandas | ✅ Live on Streamlit Community Cloud: https://reservoir-demo.streamlit.app, embedded via `?embed=true`. |
+
+Streamlit Community Cloud's free tier puts apps to sleep after a period with no visitors. A visitor who arrives then sees Streamlit's "get this app back up" button inside the frame, and the app takes about 30–60 seconds to start. To refresh a Streamlit screenshot, run `npm run shots -- <slug>`; the script wakes the app and retakes any capture that comes out blank.
 | shelfshare | ❌ Flask + SQLite | Holds real users' data behind invites, so use a video recorded on a demo account. |
 
 ## Notes

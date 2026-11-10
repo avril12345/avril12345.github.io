@@ -200,7 +200,7 @@ function DetailsForm() {
     ) : (
       <input value={project[key]} onChange={(e) => setField(key, e.target.value)} className={input} />
     );
-  const nullable = (key: "liveUrl" | "videoUrl" | "previewUrl" | "poster" | "thumbnail") => (
+  const nullable = (key: "liveUrl" | "embedUrl" | "videoUrl" | "previewUrl" | "poster" | "thumbnail") => (
     <input value={project[key] ?? ""} placeholder="none" onChange={(e) => setField(key, e.target.value.trim() || null)} className={input} />
   );
 
@@ -230,7 +230,8 @@ function DetailsForm() {
           </select>
         </Field>
       </div>
-      <Field label="Live URL">{nullable("liveUrl")}</Field>
+      <Field label="Live URL" hint="Opened by “Open live site” and shown in the frame’s address bar.">{nullable("liveUrl")}</Field>
+      <Field label="Embed URL" hint="Only if the iframe needs a different address, e.g. https://app.streamlit.app/?embed=true">{nullable("embedUrl")}</Field>
       <label className="flex items-center gap-2 text-sm text-fg">
         <input type="checkbox" checked={project.embeddable} onChange={(e) => setField("embeddable", e.target.checked)} className="accent-[var(--accent)]" />
         Embeddable in an iframe

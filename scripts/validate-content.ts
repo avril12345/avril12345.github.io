@@ -25,7 +25,7 @@ for (const f of fs.readdirSync(dir).filter((f) => f.endsWith(".json"))) {
   if (`${p.slug}.json` !== f) problems.push(`filename should be ${p.slug}.json`);
   if (slugs.has(p.slug)) problems.push("duplicate slug");
   slugs.add(p.slug);
-  if (p.embeddable && !p.liveUrl) problems.push("embeddable without liveUrl");
+  if (p.embeddable && !(p.embedUrl ?? p.liveUrl)) problems.push("embeddable without liveUrl or embedUrl");
   // Local files (paths starting with "/") must exist under public/; URLs are not checked.
   for (const file of [p.poster, p.thumbnail, p.videoUrl, p.previewUrl]) {
     if (file?.startsWith("/") && !fs.existsSync(path.join("public", file))) problems.push(`missing public${file}`);
