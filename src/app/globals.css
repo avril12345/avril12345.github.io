@@ -105,6 +105,48 @@ body::after {
 .md blockquote { border-left: 2px solid var(--accent); padding-left: 0.9em; color: var(--muted); }
 .md a { color: var(--accent-strong); text-decoration: underline; text-underline-offset: 3px; }
 
+/* Starfield (landing page): see components/Starfield.tsx */
+:root { --star: rgb(222 232 255); --star-glow: rgb(140 185 255 / 0.55); --star-max: 0.85; --star-min: 0.12; }
+:root[data-theme="light"] { --star: rgb(31 111 255); --star-glow: rgb(31 111 255 / 0.3); --star-max: 0.45; --star-min: 0.06; }
+.starfield {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  color: var(--star);
+}
+.star-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 9999px;
+  opacity: var(--star-max);
+  animation: twinkle 5s ease-in-out infinite;
+}
+.star-bright {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  border-radius: 9999px;
+  background: var(--star);
+  box-shadow: 0 0 6px 2px var(--star-glow);
+  animation: sparkle 5s ease-in-out infinite;
+}
+@keyframes twinkle {
+  0%, 100% { opacity: var(--star-max); }
+  50% { opacity: var(--star-min); }
+}
+@keyframes sparkle {
+  0%, 100% { opacity: 0.15; transform: scale(0.6); }
+  45% { opacity: 1; transform: scale(1.25); }
+  60% { opacity: 0.7; transform: scale(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .star-layer, .star-bright { animation: none !important; }
+  .star-bright { opacity: 0.7; }
+}
+
 ::view-transition-group(*) {
   animation-duration: 450ms;
   animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);

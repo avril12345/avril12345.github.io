@@ -39,6 +39,10 @@ Next.js 15 App Router + TS + Tailwind v4 + Framer Motion, `output: 'export'`. No
 - `npm run meta` forces a repo-metadata refresh (otherwise cached for 1 h).
 - LOUD liveUrl is a claude.ai artifact: CSP `frame-ancestors 'self'` → not embeddable; must be shared "anyone with link" for visitors.
 
+## Starfield + About (2026-11-10)
+- `Starfield.tsx` (home only): server-rendered, seeded; 6 box-shadow layers (stars in vw/vh) + 10 glow stars; opacity/transform animations only; `animation: none` under reduced motion. Fixed z-0, home content wrapped `relative z-[1]`. Lighthouse mobile unchanged (95).
+- `/about/` from `content/about.json` (`AboutSchema`; `photo`, `resumeUrl` optional, checked by validate). Header tabs = `NavTabs.tsx` (client, usePathname; project pages count as Work). About text is a draft I wrote from the projects only; user to rewrite in their words. Not editable in edit mode (JSON file).
+
 ## Phase 3: tour + edit mode
 - `ProjectProvider` (`components/project/ProjectContext.tsx`) holds the editable project copy, tour index, dirty/save state. Detail page text comes from `ProjectSections.tsx` (header, about, links, tags) so edits preview live.
 - Tour: `tour/Tour.tsx` (controller) + `tour/TourBox.tsx` (the one callout). Box placement computed in px from frame size + anchor, clamped inside the frame. Drag/resize use pointer capture so the iframe can't steal events. Mobile (<768px) = bottom sheet via portal.

@@ -2,7 +2,7 @@ import "server-only";
 import { createHash } from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
-import { ProjectSchema, SiteSchema, type Project, type Site } from "./schema";
+import { AboutSchema, ProjectSchema, SiteSchema, type About, type Project, type Site } from "./schema";
 import type { RepoMeta } from "../../scripts/fetch-repo-meta";
 
 export type { RepoMeta };
@@ -29,6 +29,10 @@ function readJson(file: string): unknown {
 
 export function getSite(): Site {
   return SiteSchema.parse(readJson(path.join(CONTENT_DIR, "site.json")));
+}
+
+export function getAbout(): About {
+  return AboutSchema.parse(readJson(path.join(CONTENT_DIR, "about.json")));
 }
 
 /** All projects, validated and sorted. Drafts are stripped unless includeDrafts. */

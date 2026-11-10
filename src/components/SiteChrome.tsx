@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Site } from "@/lib/schema";
 import { GitHubIcon, LinkedInIcon, MailIcon } from "./Icons";
+import { NavTabs } from "./NavTabs";
 import { ThemeToggle } from "./ThemeToggle";
 
 export function SiteHeader({ site }: { site: Site }) {
@@ -11,7 +12,10 @@ export function SiteHeader({ site }: { site: Site }) {
         <Link href="/" className="font-medium tracking-tight text-fg transition-colors hover:text-accent-strong">
           {site.name}
         </Link>
-        <ThemeToggle />
+        <div className="flex items-center gap-2">
+          <NavTabs />
+          <ThemeToggle />
+        </div>
       </div>
     </div>
   );

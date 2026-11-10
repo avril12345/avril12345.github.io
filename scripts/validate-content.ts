@@ -1,7 +1,7 @@
 /** Validates every content file against the schema. Run: npm run validate */
 import fs from "node:fs";
 import path from "node:path";
-import { ProjectSchema, SiteSchema } from "../src/lib/schema";
+import { AboutSchema, ProjectSchema, SiteSchema } from "../src/lib/schema";
 
 const dir = path.join(process.cwd(), "content/projects");
 let failed = false;
@@ -10,6 +10,19 @@ const site = SiteSchema.safeParse(JSON.parse(fs.readFileSync("content/site.json"
 if (!site.success) {
   failed = true;
   console.error("✗ content/site.json\n" + site.error.message);
+}
+
+const about = AboutSchema.safeParse(JSON.parse(fs.readFileSync("content/about.json", "utf8")));
+if (!about.success) {
+  failed = true;
+  console.error("✗ content/about.json\n" + about.error.message);
+} else {
+  for (const file of [about.data.photo, about.data.resumeUrl]) {
+    if (file?.startsWith("/") && !fs.existsSync(path.join("public", file))) {
+      failed = true;
+      console.error(`✗ content/about.json: missing public${file}`);
+    }
+  }
 }
 
 const slugs = new Set<string>();

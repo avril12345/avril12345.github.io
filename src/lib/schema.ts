@@ -62,6 +62,20 @@ export const SiteSchema = z.object({
   }),
 });
 
+/** content/about.json: the About page. `body` is markdown. */
+export const AboutSchema = z.object({
+  eyebrow: z.string(),
+  headline: z.string(),
+  intro: z.string(),
+  photo: z.string().nullable().default(null),
+  resumeUrl: z.string().nullable().default(null),
+  body: z.string(),
+  focus: z.array(z.object({ title: z.string(), body: z.string() })).default([]),
+  skills: z.array(z.object({ group: z.string(), items: z.array(z.string()) })).default([]),
+  cta: z.string(),
+});
+export type About = z.infer<typeof AboutSchema>;
+
 export type TourStep = z.infer<typeof TourStepSchema>;
 /** A step as sent to visitors: body pre-rendered to HTML at build time. */
 export type TourStepView = TourStep & { html?: string };

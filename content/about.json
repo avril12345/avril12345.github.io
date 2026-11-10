@@ -1,0 +1,29 @@
+{
+  "eyebrow": "About me",
+  "headline": "I turn messy operational work into tools a small team can run.",
+  "intro": "I build internal tools, dashboards and AI-assisted workflows for the parts of a business that usually live in spreadsheets and inboxes: sales prep, site screening, client operations and finance.",
+  "photo": null,
+  "resumeUrl": null,
+  "body": "Most of my projects start the same way: a small team doing important work by hand, with the knowledge spread across documents, websites and people's heads. I like finding the structure in that work and building something that makes it faster without hiding how it works.\n\nWhen I use language models, I put them last in the pipeline. Rules, scoring and data checks run in plain code first, and the model writes from a fact sheet it can't wander away from. Every claim needs a source, outputs are checked against a schema, and there's always a fallback, so a team can trust what's in front of them.\n\nI care about the last mile too: interfaces that are quick to read, printable one-page outputs, guided tours for new users, and demos anyone can open in a browser.",
+  "focus": [
+    {
+      "title": "Operations tools",
+      "body": "CRMs, dashboards and workflow apps that replace spreadsheets and manual prep for small teams."
+    },
+    {
+      "title": "Grounded AI",
+      "body": "LLM features with citations, schema checks and rule-based fallbacks, so the output is something you can act on."
+    },
+    {
+      "title": "Data and maps",
+      "body": "Geospatial pipelines, scoring models and visualisations that turn public data into shortlists and decisions."
+    }
+  ],
+  "skills": [
+    { "group": "Languages", "items": ["Python", "TypeScript", "JavaScript", "SQL"] },
+    { "group": "Apps", "items": ["Streamlit", "Flask", "Node.js", "Next.js", "React"] },
+    { "group": "Data", "items": ["Pandas", "GeoPandas", "SQLite", "Data visualisation"] },
+    { "group": "AI", "items": ["Claude API", "Structured outputs", "Prompt design", "Evaluation"] }
+  ],
+  "cta": "Want to talk about a project, or a role where I could build tools like these?"
+}

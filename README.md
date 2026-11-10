@@ -31,6 +31,7 @@ npm run dev        # http://localhost:3000, with edit mode on
 ```
 content/
   site.json                  name, intro, GitHub / LinkedIn / email
+  about.json                 the About page (headline, intro, markdown body, focus cards, skills, photo, CV link)
   projects/<slug>.json       one file per project (text, links, video, tour steps)
 assets/projects/<slug>/      PNG screenshot sources (not deployed)
 public/projects/<slug>/      WebP images the site serves

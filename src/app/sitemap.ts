@@ -7,6 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const { siteUrl } = getSite();
   return [
     { url: `${siteUrl}/`, changeFrequency: "monthly", priority: 1 },
+    { url: `${siteUrl}/about/`, changeFrequency: "monthly", priority: 0.9 },
     ...getProjects().map((p) => ({
       url: `${siteUrl}/projects/${p.slug}/`,
       lastModified: getRepoMeta(p.repo)?.pushedAt,
