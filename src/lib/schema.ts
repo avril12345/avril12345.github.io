@@ -73,6 +73,18 @@ export const AboutSchema = z.object({
   focus: z.array(z.object({ title: z.string(), body: z.string() })).default([]),
   skills: z.array(z.object({ group: z.string(), items: z.array(z.string()) })).default([]),
   cta: z.string(),
+  /** "Outside work": markdown text, photos (local paths with pixel size), optional link. */
+  personal: z
+    .object({
+      heading: z.string(),
+      body: z.string(),
+      photos: z.array(z.object({ src: z.string(), alt: z.string(), caption: z.string(), width: z.number(), height: z.number() })).default([]),
+      link: z.object({ label: z.string(), url: z.url() }).nullable().default(null),
+      /** Optional embedded viewer (e.g. a Canva design's `/view?embed` URL), shown in a 16:9 window. */
+      embed: z.object({ heading: z.string(), title: z.string(), url: z.url() }).nullable().default(null),
+    })
+    .nullable()
+    .default(null),
 });
 export type About = z.infer<typeof AboutSchema>;
 

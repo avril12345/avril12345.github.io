@@ -17,7 +17,7 @@ if (!about.success) {
   failed = true;
   console.error("✗ content/about.json\n" + about.error.message);
 } else {
-  for (const file of [about.data.photo, about.data.resumeUrl]) {
+  for (const file of [about.data.photo, about.data.resumeUrl, ...(about.data.personal?.photos.map((p) => p.src) ?? [])]) {
     if (file?.startsWith("/") && !fs.existsSync(path.join("public", file))) {
       failed = true;
       console.error(`✗ content/about.json: missing public${file}`);

@@ -42,6 +42,7 @@ Next.js 15 App Router + TS + Tailwind v4 + Framer Motion, `output: 'export'`. No
 ## Starfield + About (2026-11-10)
 - `Starfield.tsx` (home only): server-rendered, seeded; 6 box-shadow layers (stars in vw/vh) + 10 glow stars; opacity/transform animations only; `animation: none` under reduced motion. Fixed z-0, home content wrapped `relative z-[1]`. Lighthouse mobile unchanged (95).
 - `/about/` from `content/about.json` (`AboutSchema`; `photo`, `resumeUrl` optional, checked by validate). Header tabs = `NavTabs.tsx` (client, usePathname; project pages count as Work). About text is a draft I wrote from the projects only; user to rewrite in their words. Not editable in edit mode (JSON file).
+- About page reads content inside the component/generateMetadata (not module scope) so dev picks up JSON edits. `personal` = Outside work (markdown, photos with px size, link, optional 16:9 lazy iframe `embed`; Canva uses `/view?embed`, verified framable). Photos in `public/about/`. CV = `public/Avril_WaltersCV.pdf` (no phone number).
 
 ## Phase 3: tour + edit mode
 - `ProjectProvider` (`components/project/ProjectContext.tsx`) holds the editable project copy, tour index, dirty/save state. Detail page text comes from `ProjectSections.tsx` (header, about, links, tags) so edits preview live.

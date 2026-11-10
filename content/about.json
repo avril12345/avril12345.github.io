@@ -1,10 +1,10 @@
 {
   "eyebrow": "About me",
-  "headline": "I turn messy operational work into tools a small team can run.",
-  "intro": "I build internal tools, dashboards and AI-assisted workflows for the parts of a business that usually live in spreadsheets and inboxes: sales prep, site screening, client operations and finance.",
-  "photo": null,
-  "resumeUrl": null,
-  "body": "Most of my projects start the same way: a small team doing important work by hand, with the knowledge spread across documents, websites and people's heads. I like finding the structure in that work and building something that makes it faster without hiding how it works.\n\nWhen I use language models, I put them last in the pipeline. Rules, scoring and data checks run in plain code first, and the model writes from a fact sheet it can't wander away from. Every claim needs a source, outputs are checked against a schema, and there's always a fallback, so a team can trust what's in front of them.\n\nI care about the last mile too: interfaces that are quick to read, printable one-page outputs, guided tours for new users, and demos anyone can open in a browser.",
+  "headline": "I am a recent graduate in Environmental Studies and Energy from Yale University. I have recently developed a love for environmental technology and I am keen to help implement the world's scientific solutions.",
+  "intro": "I have built internal tools, dashboards and AI-assisted workflows for the parts of a business that usually live in spreadsheets and inboxes: sales prep, site screening, client operations and finance.",
+  "photo": "/about/photo.webp",
+  "resumeUrl": "/Avril_WaltersCV.pdf",
+  "body": "Most of my projects start the same way: a small team doing important work by hand, with the knowledge spread across documents, websites and people's heads. I like observing those teams and building tools to automate or speed up their workflows.",
   "focus": [
     {
       "title": "Operations tools",
@@ -25,5 +25,19 @@
     { "group": "Data", "items": ["Pandas", "GeoPandas", "SQLite", "Data visualisation"] },
     { "group": "AI", "items": ["Claude API", "Structured outputs", "Prompt design", "Evaluation"] }
   ],
-  "cta": "Want to talk about a project, or a role where I could build tools like these?"
+  "cta": "Want to talk about a project, or a role where I could build tools like these?",
+  "personal": {
+    "heading": "Outside work",
+    "body": "Outside of work, I love playing rugby, I joined Beantown when I moved to Boston. Prior to that I rowed at Yale, fortunate to have enjoyed the crisp autumn rows on the Housatonic River.",
+    "photos": [
+      { "src": "/about/rugby.webp", "alt": "A women's rugby match: a player in a dark green shirt carries the ball through a tackle", "caption": "Rugby", "width": 900, "height": 775 },
+      { "src": "/about/rowing.webp", "alt": "The Yale women's eight racing on a river", "caption": "Rowing at Yale", "width": 1600, "height": 477 }
+    ],
+    "link": { "label": "Open my photography portfolio", "url": "https://www.canva.com/design/DAGneN05fT8/dwD0BCfuhvKFdNzHjHL8iw/view" },
+    "embed": {
+      "heading": "Photography",
+      "title": "Avril Walters photography portfolio (Canva slideshow)",
+      "url": "https://www.canva.com/design/DAGneN05fT8/dwD0BCfuhvKFdNzHjHL8iw/view?embed"
+    }
+  }
 }
