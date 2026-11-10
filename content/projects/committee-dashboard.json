@@ -1,0 +1,76 @@
+{
+  "slug": "committee-dashboard",
+  "order": 1,
+  "title": "Reunion Committee Hub",
+  "tagline": "A year of volunteer event planning in one self-contained page.",
+  "description": "A single-page planning hub for a volunteer committee running a club's 50th anniversary reunion: meetups, budget, phone banking, marketing, emails and meeting notes in one place.",
+  "longDescription": "A volunteer committee organizing a 50th anniversary reunion has a year of scattered work: regional meetups, budgets, alumni phone banking, marketing assets, email campaigns and meeting notes. This hub puts all of it in one page.\n\n- **Home** shows KPI cards, a countdown to the next event and a heat map of where alumni live (city-level counts only, no names).\n- **Updates** lets members post progress with a status, and each post appears on Home, in the subcommittee table and on the linked event.\n- **Meetings** keeps searchable summaries with decisions, owners and a list of items still open across meetings.\n- **Events** gives each event an editable card with a six-step planning checklist.\n- **Budget** tracks estimated vs. actual spend and includes a ticket planner that works out the break-even price.\n- **Marketing** and **Alumni Emails** hold the brand kit and a shared log of every email sent.\n\n### How it's built\n\nIt's one HTML file with no build step and no external requests: d3, TopoJSON, the US map and the fonts are all embedded. Tabs use hash routing in vanilla JavaScript. In production it runs as a Claude artifact on a shared realtime store; this demo swaps in a `localStorage` store with the same interface, so the app code is unchanged.\n\n> Demo data only. \"Harbor City Women's Rugby\" and everyone in it are fictional.",
+  "tags": [
+    "Dashboard",
+    "JavaScript",
+    "D3",
+    "Data viz",
+    "Event ops"
+  ],
+  "year": 2026,
+  "status": "live",
+  "repo": "avril12345/Committee-dashboard",
+  "repoUrl": "https://github.com/avril12345/Committee-dashboard",
+  "liveUrl": "https://avril12345.github.io/Committee-dashboard/",
+  "embeddable": true,
+  "videoUrl": null,
+  "poster": "/projects/committee-dashboard/poster.webp",
+  "thumbnail": "/projects/committee-dashboard/thumb.webp",
+  "tourSteps": [
+    {
+      "id": "kpis",
+      "title": "The whole year at a glance",
+      "body": "KPI cards and a countdown to the next event give the committee one place to check where things stand.",
+      "x": 50,
+      "y": 22,
+      "width": 280,
+      "anchor": "bottom",
+      "draft": true
+    },
+    {
+      "id": "heatmap",
+      "title": "Where alumni live",
+      "body": "A d3 heat map of alumni by city. It uses **counts only, no names**, so it's safe to share with every volunteer.",
+      "x": 38,
+      "y": 55,
+      "width": 300,
+      "anchor": "right",
+      "draft": true
+    },
+    {
+      "id": "updates",
+      "title": "Updates flow everywhere",
+      "body": "A post on the **Updates** tab shows up here, in the subcommittee table and on the linked event card at the same time.",
+      "x": 80,
+      "y": 50,
+      "width": 280,
+      "anchor": "left",
+      "draft": true
+    },
+    {
+      "id": "budget",
+      "title": "Break-even ticket planner",
+      "body": "Open the **Budget** tab: line items per event, spend by category, and a planner that calculates the break-even ticket price. Exports to CSV.",
+      "x": 30,
+      "y": 9,
+      "width": 300,
+      "anchor": "bottom",
+      "draft": true
+    },
+    {
+      "id": "editable",
+      "title": "Try editing anything",
+      "body": "Every field is editable and saved in your browser. **Reset demo data** puts the sample data back.",
+      "x": 88,
+      "y": 9,
+      "width": 260,
+      "anchor": "bottom",
+      "draft": true
+    }
+  ]
+}

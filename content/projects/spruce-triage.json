@@ -1,0 +1,44 @@
+{
+  "slug": "spruce-triage",
+  "order": 2,
+  "title": "Inbound Triage & Pre-Call Brief",
+  "tagline": "Turns a demo request into a scored, routed, call-ready brief in about 12 seconds.",
+  "description": "A sales-ops tool for heat pump installer software: it reads a demo request and the prospect's website, then returns a fit score, a routing decision, a rep brief, a talk track and two draft emails.",
+  "longDescription": "B2B software sold only through booked demos has a prep problem: every inbound request needs someone to research the company, judge urgency and get ready for the call. This tool does that prep automatically, so account executives spend their time on calls, strategic accounts reach the Head of Sales the same day, and poor-fit requests still get a fast, useful reply.\n\n### Deterministic first, AI last\n\nThe pipeline fetches at most five pages of the prospect's site, extracts signals (each with its source URL and quote), scores and routes the lead from YAML rules, and matches a case study and talk track. Only then does Claude write the prose, from a compact JSON fact sheet, as schema-checked output.\n\n### Guardrails before anything is shown\n\n- Every claim about the prospect must cite a URL from the fact sheet.\n- Grant schemes are checked by nation, so a Scottish installer never hears about an England-only scheme.\n- Case-study metrics must match the source character for character.\n- If the output fails twice, a rule-based fallback brief is shown instead. The app never shows a blank screen.\n\n### Results\n\nIn a live evaluation across 8 demo profiles: 8/8 routed to the expected tier, 0 ungrounded claims, and 8.8–13.4 seconds per brief for about $0.15 total.\n\n> Demo with fictional installers on `.test` domains. Not affiliated with Spruce.",
+  "tags": ["AI / LLM", "Python", "Streamlit", "Sales ops"],
+  "year": 2026,
+  "status": "beta",
+  "repo": "avril12345/SpruceDemoV3",
+  "repoUrl": "https://github.com/avril12345/SpruceDemoV3",
+  "liveUrl": null,
+  "embeddable": false,
+  "videoUrl": null,
+  "poster": null,
+  "thumbnail": null,
+  "tourSteps": [
+    {
+      "id": "form",
+      "title": "A demo request comes in",
+      "body": "Pick one of the eight fictional installer profiles, or fill in the form yourself. The site it points to is a static fixture.",
+      "x": 14, "y": 40, "width": 280, "anchor": "right", "draft": true
+    },
+    {
+      "id": "score",
+      "title": "Fit score and routing",
+      "body": "Signals from the website are scored against YAML weights, and the first matching rule picks the tier and SLA. The per-factor breakdown shows why.",
+      "x": 55, "y": 22, "width": 300, "anchor": "bottom", "draft": true
+    },
+    {
+      "id": "brief",
+      "title": "A grounded one-page brief",
+      "body": "Claude writes the brief from a JSON fact sheet. Every claim about the prospect links to the page it came from.",
+      "x": 60, "y": 52, "width": 300, "anchor": "left", "draft": true
+    },
+    {
+      "id": "emails",
+      "title": "Talk track and draft emails",
+      "body": "Two emails under 120 words, each with a question and a booking-link placeholder. A person sends them; nothing goes out automatically.",
+      "x": 60, "y": 80, "width": 300, "anchor": "top", "draft": true
+    }
+  ]
+}

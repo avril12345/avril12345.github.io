@@ -1,0 +1,44 @@
+{
+  "slug": "shelfshare",
+  "order": 4,
+  "title": "Shelfshare",
+  "tagline": "An invite-only lending library for friends: scan your shelves, borrow instead of buy.",
+  "description": "A closed-community library where friends share their personal bookshelves, search everyone's books at once and request to borrow, with barcode scanning on phones.",
+  "longDescription": "Shelfshare lets a circle of friends pool their bookshelves. Search once across everyone's books and the result tells you whether you own it, which friend has a copy, or that nobody has it yet. Then request to borrow, and the owner approves or declines on their Requests tab.\n\n- **Add books by barcode.** The phone camera uses the native `BarcodeDetector` on Android Chrome and falls back to `html5-qrcode` on iOS. ISBNs are looked up in Open Library, then Google Books.\n- **Invite-only groups.** Sign-up needs a single-use invite code tied to a group, such as a book club or family. You only see books from people who share a group with you.\n- **Safe by default.** Every API needs a login, passwords are hashed, and startup migrations are additive and idempotent, so no data is ever dropped.\n\nIt's built on Flask and SQLite with a single static page styled like a classic lending library: parchment, card-catalogue results and brass drawer tabs, and it works on phones.",
+  "tags": ["Python", "Flask", "Web app", "Mobile"],
+  "year": 2026,
+  "status": "beta",
+  "repo": "avril12345/shelfshare",
+  "repoUrl": "https://github.com/avril12345/shelfshare",
+  "liveUrl": null,
+  "embeddable": false,
+  "videoUrl": null,
+  "poster": "/projects/shelfshare/poster.webp",
+  "thumbnail": "/projects/shelfshare/thumb.webp",
+  "tourSteps": [
+    {
+      "id": "search",
+      "title": "One search across every shelf",
+      "body": "Search by title, author or ISBN. Each result says whether you own it, which friend has a copy, or that nobody has it yet.",
+      "x": 50, "y": 25, "width": 300, "anchor": "bottom", "draft": true
+    },
+    {
+      "id": "borrow",
+      "title": "Request to borrow",
+      "body": "The request is logged and the owner marks it OK or NO on their Requests tab.",
+      "x": 75, "y": 55, "width": 260, "anchor": "left", "draft": true
+    },
+    {
+      "id": "scan",
+      "title": "Add books with your phone camera",
+      "body": "Scan a barcode and the ISBN is looked up in Open Library, then Google Books. You can also type an ISBN or add a book by hand.",
+      "x": 30, "y": 45, "width": 300, "anchor": "right", "draft": true
+    },
+    {
+      "id": "invites",
+      "title": "Invite-only circles",
+      "body": "Generate single-use invite codes for a group. You only see books from people who share a group with you.",
+      "x": 60, "y": 12, "width": 280, "anchor": "bottom", "draft": true
+    }
+  ]
+}

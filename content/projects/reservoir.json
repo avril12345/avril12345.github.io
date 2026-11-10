@@ -1,0 +1,50 @@
+{
+  "slug": "reservoir",
+  "order": 3,
+  "title": "Reservoir",
+  "tagline": "Ranks every parcel in a utility territory for solar + storage, and tracks local moratoria with verified quotes.",
+  "description": "A site screener for distributed solar + storage origination that scores every parcel for buildability, grid headroom and permitting risk, paired with an LLM-parsed tracker of local siting rules and moratoria.",
+  "longDescription": "Built for a two-analyst team originating distributed-generation solar + storage sites by direct search, Reservoir combines two tools in one tabbed Streamlit app.\n\n### 1 · Site Screener\n\nA GeoPandas pipeline pulls parcels, wetlands, flood zones, slope, land cover, protected open space, brownfields, landfills and utility hosting-capacity data, then scores every parcel from 0 to 100 on seven re-weightable components. It favors landfills, brownfields, gravel pits and industrial land. Outputs include a ranked shortlist, a printable one-page site card per parcel and an owner list for outreach.\n\nNational Grid publishes feeder attributes but withholds their geometry, so the pipeline rebuilds each three-phase feeder's path from a filtered map image to within about ±12 m.\n\n### 2 · Local Siting & Moratorium Tracker\n\nClaude extracts structured fields from zoning bylaws and local laws: by-right vs. special permit, size caps, setbacks, decommissioning and moratorium dates. Every field needs a verbatim quote, and code checks that the quote is really in the source; if it isn't, the field drops to `unknown`. Moratorium status is re-derived from dates in code, proposed laws never change a score, and LLM output never overwrites a human-verified record.\n\nA 20-town accuracy check measures field-level error rates by type. It shows 0/20 until a person completes it, because an invented accuracy number would defeat the purpose.",
+  "tags": ["AI / LLM", "Python", "Streamlit", "GIS", "Energy", "Data viz"],
+  "year": 2026,
+  "status": "beta",
+  "repo": "avril12345/Reservoir",
+  "repoUrl": "https://github.com/avril12345/Reservoir",
+  "liveUrl": null,
+  "embeddable": false,
+  "videoUrl": null,
+  "poster": null,
+  "thumbnail": null,
+  "tourSteps": [
+    {
+      "id": "map",
+      "title": "Feeders colored by headroom",
+      "body": "The Map tab shows the National Grid Blackstone Valley pilot. Three-phase feeders are colored by available hosting capacity.",
+      "x": 50, "y": 50, "width": 300, "anchor": "right", "draft": true
+    },
+    {
+      "id": "reweight",
+      "title": "Re-weight live",
+      "body": "Raise **feeder headroom** in the sidebar and watch gravel pits on zero-headroom feeders drop down the shortlist.",
+      "x": 12, "y": 45, "width": 280, "anchor": "right", "draft": true
+    },
+    {
+      "id": "card",
+      "title": "One-page site cards",
+      "body": "Each parcel gets a card with acreage, buildable area, nearest feeder, permitting status and owner. Print it to PDF for one page per site.",
+      "x": 62, "y": 40, "width": 300, "anchor": "left", "draft": true
+    },
+    {
+      "id": "tracker",
+      "title": "Quotes are checked, not trusted",
+      "body": "The Siting tracker shows each extracted field with its verbatim quote. A quote that isn't in the source downgrades the field to `unknown`.",
+      "x": 55, "y": 60, "width": 320, "anchor": "top", "draft": true
+    },
+    {
+      "id": "accuracy",
+      "title": "Accuracy stays blank until a person checks",
+      "body": "The 20-town accuracy check reports error rates by type (omission, hallucination, wrong value, stale, entity confusion, unit) once it's been reviewed by hand.",
+      "x": 50, "y": 30, "width": 300, "anchor": "bottom", "draft": true
+    }
+  ]
+}

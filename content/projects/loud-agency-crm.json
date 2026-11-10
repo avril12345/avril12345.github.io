@@ -1,0 +1,44 @@
+{
+  "slug": "loud-agency-crm",
+  "order": 5,
+  "title": "LOUD Agency CRM",
+  "tagline": "Client work, meetings, invoicing and UK VAT for a personal branding agency, in one workspace.",
+  "description": "A demo CRM and business-ops workspace for a London personal branding agency: client health, meetings with AI research, content and visibility pipelines, invoicing and UK VAT returns.",
+  "longDescription": "A demo workspace for a fictional London agency that builds the personal brands of C-suite and director-level executives. It covers both sides of the business: the client work and the back office.\n\n- **Dashboard:** MRR, outstanding invoices, audience and engagement KPIs, a client health score and a needs-attention list.\n- **Clients and Results:** a page per client with meetings, work log and billing, plus growth since they joined and a printable results report.\n- **Meetings:** booking with clash checks and `.ics` invites, notes and actions, and Claude web search + Firecrawl research run straight from the notes.\n- **Content and Visibility:** a content calendar, and a pipeline for speaking, podcast, media and award opportunities.\n- **Invoices:** drafts built from logged work, founder approval, sequential numbering, reminders and credit notes, with printable UK VAT invoices.\n- **Finance:** nine-box VAT returns on invoice or cash basis with pre-filing checks, aged debtors, P&L, a corporation tax estimate, and CSV and Xero exports.\n\nIt runs on a small Node server that reads and writes JSON files, so the whole dataset is versionable. Without API keys the seeded research briefs still work. The live demo is a browser-only copy that runs from a data snapshot, with its own 11-step guided tour and no API calls.\n\n> All clients, companies, staff and figures are fictional.",
+  "tags": ["Dashboard", "CRM", "AI / LLM", "JavaScript", "Node.js", "Finance"],
+  "year": 2026,
+  "status": "beta",
+  "repo": "avril12345/PersonalBrandingAgency_Demo",
+  "repoUrl": "https://github.com/avril12345/PersonalBrandingAgency_Demo",
+  "liveUrl": "https://claude.ai/artifact/1QJTzNXHLYae3xShmmg8H6",
+  "embeddable": false,
+  "videoUrl": null,
+  "poster": null,
+  "thumbnail": null,
+  "tourSteps": [
+    {
+      "id": "dashboard",
+      "title": "The agency at a glance",
+      "body": "MRR, outstanding invoices, audience KPIs and client health, with a list of what needs attention today.",
+      "x": 50, "y": 25, "width": 300, "anchor": "bottom", "draft": true
+    },
+    {
+      "id": "meetings",
+      "title": "Research from meeting notes",
+      "body": "Record notes and actions, then run Claude web search + Firecrawl branding research straight from them.",
+      "x": 35, "y": 50, "width": 300, "anchor": "right", "draft": true
+    },
+    {
+      "id": "invoices",
+      "title": "From logged work to a VAT invoice",
+      "body": "Drafts are built from the work log, go to the founder for approval, then get a sequential number and tax point when sent.",
+      "x": 65, "y": 45, "width": 300, "anchor": "left", "draft": true
+    },
+    {
+      "id": "finance",
+      "title": "VAT returns with pre-filing checks",
+      "body": "All nine boxes on invoice or cash basis, aged debtors, P&L and a corporation tax estimate, with CSV and Xero exports.",
+      "x": 50, "y": 70, "width": 320, "anchor": "top", "draft": true
+    }
+  ]
+}

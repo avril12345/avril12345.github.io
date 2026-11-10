@@ -1,27 +1,39 @@
 {
-  "name": "portfolio-tmp",
+  "name": "avril12345-portfolio",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "validate": "tsx scripts/validate-content.ts",
+    "shots": "tsx scripts/screenshot.ts",
+    "prebuild": "tsx scripts/fetch-repo-meta.ts",
+    "predev": "tsx scripts/fetch-repo-meta.ts",
+    "meta": "tsx scripts/fetch-repo-meta.ts --force",
+    "images": "tsx scripts/optimize-images.ts"
   },
   "dependencies": {
+    "framer-motion": "^14.12.0",
+    "marked": "^18.2.0",
+    "next": "15.5.29",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "next": "15.5.29"
+    "zod": "^4.6.7"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@eslint/eslintrc": "^3",
+    "@playwright/test": "^1.65.0",
+    "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4",
     "eslint": "^9",
     "eslint-config-next": "15.5.29",
-    "@eslint/eslintrc": "^3"
+    "sharp": "^0.35.5",
+    "tailwindcss": "^4",
+    "tsx": "^4.23.15",
+    "typescript": "^5"
   }
 }
