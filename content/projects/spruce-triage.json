@@ -1,6 +1,6 @@
 {
   "slug": "spruce-triage",
-  "order": 2,
+  "order": 3,
   "title": "Inbound Triage & Pre-Call Brief",
   "tagline": "Turns a demo request into a scored, routed, call-ready brief in about 12 seconds.",
   "description": "A sales-ops tool for heat pump installer software: it reads a demo request and the prospect's website, then returns a fit score, a routing decision, a rep brief, a talk track and two draft emails.",

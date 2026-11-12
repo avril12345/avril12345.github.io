@@ -1,6 +1,6 @@
 {
   "slug": "reservoir",
-  "order": 3,
+  "order": 4,
   "title": "Reservoir",
   "tagline": "Ranks every parcel in a utility territory for solar + storage, and tracks local moratoria with verified quotes.",
   "description": "A site screener for distributed solar + storage origination that scores every parcel for buildability, grid headroom and permitting risk, paired with an LLM-parsed tracker of local siting rules and moratoria.",
