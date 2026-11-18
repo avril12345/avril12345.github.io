@@ -19,6 +19,7 @@ Next.js 15 App Router + TS + Tailwind v4 + Framer Motion, `output: 'export'`. No
 - `embedUrl` (optional) = iframe src when it differs from liveUrl. Spruce + Reservoir are live Streamlit apps (`?embed=true`), verified rendering inside the frame. Free Streamlit apps sleep; the wake button shows inside the frame.
 - `npm run shots` uses embedUrl, wakes sleeping Streamlit apps, captures once (thumb = resized poster) and retakes blank captures (stdev check). Skips claude.ai URLs (private).
 - LOUD artifact is shared "anyone with link" (2026-11-10). claude.ai shows a Cloudflare bot check to headless browsers, so its screenshot must come from the user: `npm run shots -- loud-agency-crm <file.png>`.
+- `frame: "phone"` (schema, default "browser") renders the demo in `PhoneFrame.tsx` (400px max, 376:756 screen) and shows the title card instead of the 16:10 poster inside it. Used by learn-electrical (Lovable app, embeds fine; repo is private, so `codePublic: false` hides "View code" and the repo link).
 - User is happy with the current shelfshare demo; will send a video later.
 - Still needed from the user: LOUD screenshot; videos (fallbacks) esp. LOUD and shelfshare; all 22 tour steps still draft.
 

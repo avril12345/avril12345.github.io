@@ -7,6 +7,7 @@ import type { TourStep } from "@/lib/schema";
 import { embedAt, parseVideo } from "@/lib/video";
 import { shotName, TransitionReady } from "@/lib/viewTransition";
 import { BrowserFrame } from "./BrowserFrame";
+import { PhoneFrame } from "./PhoneFrame";
 import { ArrowUpRight, PlayIcon } from "./Icons";
 import { Poster } from "./Poster";
 
@@ -64,6 +65,8 @@ export function DemoViewer() {
   const getVideoTime = mode === "video" && video?.kind === "file" ? () => videoRef.current?.currentTime ?? null : undefined;
 
   const address = project.liveUrl ? project.liveUrl.replace(/^https?:\/\//, "").replace(/\/$/, "") : `${project.slug} · walkthrough`;
+  const phone = project.frame === "phone";
+  const Frame = phone ? PhoneFrame : BrowserFrame;
   const showPoster = mode === "live" ? live !== "ready" : !videoStarted;
   const openLive = project.liveUrl && (
     <a
@@ -119,13 +122,14 @@ export function DemoViewer() {
         )}
       </div>
 
-      <BrowserFrame address={address} actions={openLive} viewportRef={viewportRef} overlay={tourIndex !== null && <Tour frameRef={viewportRef} onStepOpen={onStepOpen} getVideoTime={getVideoTime} />}>
+      <Frame address={address} actions={openLive} viewportRef={viewportRef} overlay={tourIndex !== null && <Tour frameRef={viewportRef} onStepOpen={onStepOpen} getVideoTime={getVideoTime} />}>
         {/* Live iframe: mounted on first request, kept alive while switching modes */}
         {canLive && live !== "idle" && live !== "failed" && (
           <iframe
             src={frameSrc!}
             title={`${project.title}, live demo`}
             loading="lazy"
+            allow="clipboard-write"
             sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-downloads"
             referrerPolicy="no-referrer"
             onLoad={() => {
@@ -170,7 +174,7 @@ export function DemoViewer() {
 
         {showPoster && (
           <div className="absolute inset-0">
-            <Poster project={project} variant="poster" priority className="size-full" style={{ viewTransitionName: shotName(project.slug) }} />
+            <Poster project={phone ? { ...project, poster: null, thumbnail: null } : project} variant="poster" priority className="size-full" style={{ viewTransitionName: shotName(project.slug) }} />
             <div className="absolute inset-0 grid place-items-center bg-gradient-to-t from-black/50 via-transparent to-transparent">
               {mode === "live" ? (
                 <PosterButton onClick={() => setLive("loading")} busy={live === "loading"} label={live === "loading" ? "Loading live demo…" : "Load live demo"} />
@@ -186,7 +190,7 @@ export function DemoViewer() {
             </div>
           </div>
         )}
-      </BrowserFrame>
+      </Frame>
     </div>
   );
 }

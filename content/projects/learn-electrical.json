@@ -1,0 +1,29 @@
+{
+  "slug": "learn-electrical",
+  "order": 7,
+  "title": "W&W Learn Electrical",
+  "tagline": "A phone-first revision app for Phase 4 electrical apprentices.",
+  "description": "A revision app for SOLAS Phase 4 electrical exams: quizzes, a Formula Lab, board drawings and two games, with accounts so progress follows the learner to any device.",
+  "longDescription": "Apprentices revising for the SOLAS Phase 4 electrical exams mostly study on their phones, in short bursts. This app is built for that.\n\n- **Quizzes and flashcards** cover the exam questions, with feedback on every answer.\n- **Formula Lab** generates practice calculations from 23 formulas, worked to 3 decimal places.\n- **Board drawings** and tap-to-reveal diagrams help with the drawing questions.\n- **Two games** (Snap and Block Drop) make revision of symbols and facts quicker.\n- **Accessible by design:** read-aloud with word highlighting on all text, adjustable font, size, spacing, tint and a reading ruler, and 44 px+ tap targets.\n\n### How it's built\n\nReact, Vite, TypeScript and Tailwind CSS, published from Lovable. All study content and logic run in the browser. Accounts and saved progress use Supabase Auth with row-level security, so each account can only read its own progress.\n\n### Try it\n\nChoose **Continue as guest** on the log-in page to use the full app without an account. Guest progress is lost when you close the tab.",
+  "tags": [
+    "React",
+    "TypeScript",
+    "Supabase",
+    "Education",
+    "Accessibility"
+  ],
+  "year": 2026,
+  "status": "live",
+  "repo": "avril12345/learn-electrical",
+  "repoUrl": "https://github.com/avril12345/learn-electrical",
+  "codePublic": false,
+  "liveUrl": "https://learn-electrical.lovable.app",
+  "embedUrl": null,
+  "frame": "phone",
+  "embeddable": true,
+  "videoUrl": null,
+  "previewUrl": null,
+  "poster": "/projects/learn-electrical/poster.webp",
+  "thumbnail": "/projects/learn-electrical/thumb.webp",
+  "tourSteps": []
+}

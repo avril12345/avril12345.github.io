@@ -36,9 +36,13 @@ export const ProjectSchema = z.object({
   /** "owner/name" on GitHub; used for build-time metadata */
   repo: z.string().regex(/^[\w.-]+\/[\w.-]+$/),
   repoUrl: z.url(),
+  /** False for private repos: hides the "View code" button and repo link */
+  codePublic: z.boolean().default(true),
   liveUrl: z.url().nullable(),
   /** Iframe address when it differs from liveUrl (e.g. a Streamlit app's ?embed=true) */
   embedUrl: z.url().nullable().default(null),
+  /** Demo window shape: desktop browser (16:10) or phone (for mobile-first apps) */
+  frame: z.enum(["browser", "phone"]).default("browser"),
   /** True only when the site can be shown in an iframe */
   embeddable: z.boolean(),
   /** MP4/WebM path under /public, or a YouTube/Loom URL */

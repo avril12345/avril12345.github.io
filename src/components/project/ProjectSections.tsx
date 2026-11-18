@@ -68,9 +68,11 @@ export function ProjectLinks() {
   const { project } = useProjectCtx();
   return (
     <div className="flex flex-wrap gap-2">
-      <ButtonLink variant="primary" href={project.repoUrl} target="_blank" rel="noopener noreferrer">
-        <GitHubIcon /> View code
-      </ButtonLink>
+      {project.codePublic && (
+        <ButtonLink variant="primary" href={project.repoUrl} target="_blank" rel="noopener noreferrer">
+          <GitHubIcon /> View code
+        </ButtonLink>
+      )}
       {project.liveUrl && (
         <ButtonLink href={project.liveUrl} target="_blank" rel="noopener noreferrer">
           Live site <ArrowUpRight width={14} height={14} />

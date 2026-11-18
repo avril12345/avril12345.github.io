@@ -72,10 +72,12 @@ export default async function ProjectPage({ params }: Params) {
                   <dt className="text-muted">Last updated</dt>
                   <dd className="text-fg"><time dateTime={meta.pushedAt}>{dateFmt.format(new Date(meta.pushedAt))}</time></dd>
                 </div>
-                <div className="flex justify-between gap-4">
-                  <dt className="text-muted">Repo</dt>
-                  <dd className="truncate"><a href={meta.htmlUrl} className="text-fg underline-offset-4 hover:underline">{project.repo.split("/")[1]}</a></dd>
-                </div>
+                {project.codePublic && (
+                  <div className="flex justify-between gap-4">
+                    <dt className="text-muted">Repo</dt>
+                    <dd className="truncate"><a href={meta.htmlUrl} className="text-fg underline-offset-4 hover:underline">{project.repo.split("/")[1]}</a></dd>
+                  </div>
+                )}
               </dl>
               {meta.languages.length > 0 && (
                 <>
